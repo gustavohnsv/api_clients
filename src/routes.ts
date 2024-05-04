@@ -4,7 +4,6 @@ import { ListCustomersController } from "./controllers/ListCustomersController";
 import { DeleteCustomerController } from "./controllers/DeleteCustomerController";
 import { UpdateCustomerController } from "./controllers/UpdateCustomerController";
 import { UpdateSttsCustomerController } from "./controllers/UpdateSttsCustomerController";
-import { request } from "http";
 
 export async function routes(fastify: FastifyInstance, option: FastifyPluginOptions) {
 
@@ -16,7 +15,7 @@ export async function routes(fastify: FastifyInstance, option: FastifyPluginOpti
 
     // Rota CUSTOMER
     // Rota para criar um cliente
-    fastify.post("/customer", async (request: FastifyRequest, reply: FastifyReply) => {
+    fastify.post("/customer", async (request: FastifyRequest, reply:    FastifyReply) => {
         return new CreateCustomerController().handle(request, reply);
     });
     
